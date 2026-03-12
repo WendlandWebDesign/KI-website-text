@@ -38,6 +38,48 @@
         color: var(--text);
         background: radial-gradient(circle at 20% 10%, #1a2250 0%, var(--bg) 45%),
           linear-gradient(160deg, #070b16, #090f1f 60%, #0a1124);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .site-header {
+        width: min(1100px, 92vw);
+        margin: 1.2rem auto;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: rgba(16, 23, 42, 0.55);
+        backdrop-filter: blur(14px);
+        padding: 1rem 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+
+      .brand span {
+        color: var(--brand-a);
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .main-nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+
+      .main-nav a:hover {
+        color: var(--text);
       }
 
       main {
@@ -53,6 +95,7 @@
         display: grid;
         place-items: center;
         isolation: isolate;
+        flex: 1;
       }
 
       .bg-layer {
@@ -251,6 +294,17 @@
           border-radius: 22px;
         }
 
+        .site-header {
+          flex-wrap: wrap;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .main-nav {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
         .orb {
           width: 250px;
         }
@@ -317,6 +371,15 @@
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Wendland Web Design</span>
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script>
