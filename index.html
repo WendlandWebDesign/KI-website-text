@@ -82,6 +82,12 @@
         color: var(--text);
       }
 
+      main {
+        display: grid;
+        gap: 2.5rem;
+        padding-bottom: 4rem;
+      }
+
       .hero {
         position: relative;
         min-height: 100vh;
@@ -237,33 +243,49 @@
         transform: translateY(0);
       }
 
-      .site-footer {
-        width: 100%;
+
+      .services {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 2.5rem;
+        background: linear-gradient(155deg, rgba(16, 23, 42, 0.88), rgba(10, 17, 36, 0.82));
+        box-shadow: 0 20px 60px rgba(2, 4, 14, 0.45);
+      }
+
+      .section-title {
         margin: 0;
-        padding: 1.2rem max(1.4rem, 4vw);
-        border-top: 1px solid var(--border);
-        background: rgba(16, 23, 42, 0.55);
-        backdrop-filter: blur(14px);
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
-        color: var(--muted);
-        font-size: 0.95rem;
+        font-size: clamp(1.6rem, 2.9vw, 2.4rem);
       }
 
-      .footer-links {
-        display: flex;
+      .section-intro {
+        margin-top: 0.8rem;
+      }
+
+      .services-grid {
+        margin-top: 1.8rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1rem;
       }
 
-      .footer-links a {
-        color: inherit;
-        text-decoration: none;
+      .service-card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 16px;
+        padding: 1.1rem;
       }
 
-      .footer-links a:hover {
-        color: var(--text);
+      .service-card h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .service-card p {
+        margin-top: 0.55rem;
+        font-size: 0.98rem;
+        line-height: 1.5;
       }
 
       @media (max-width: 768px) {
@@ -286,45 +308,69 @@
         .orb {
           width: 250px;
         }
+
+        .services {
+          width: min(1100px, 92vw);
+          padding: 2rem 1.3rem;
+        }
       }
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <div class="brand">WENDLAND <span>WEB DESIGN</span></div>
-      <nav class="main-nav" aria-label="Hauptnavigation">
-        <a href="#">Leistungen</a>
-        <a href="#">Projekte</a>
-        <a href="#">Über uns</a>
-        <a href="#">Kontakt</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <div class="bg-layer noise"></div>
-      <div class="bg-layer grid"></div>
-      <div class="bg-layer glow">
-        <div class="orb a" data-depth="0.35"></div>
-        <div class="orb b" data-depth="0.25"></div>
-        <div class="orb c" data-depth="0.45"></div>
-      </div>
-
-      <div class="hero-content">
-        <span class="badge">Webdesign Agentur aus dem Wendland</span>
-        <h1>
-          Wir bauen digitale Marken mit
-          <span class="accent">wow‑Effekt</span>.
-        </h1>
-        <p>
-          <strong>Wendland Web Design</strong> gestaltet performante Websites, die modern aussehen,
-          blitzschnell laden und Kundenanfragen messbar steigern.
-        </p>
-        <div class="actions">
-          <button class="btn primary">Projekt starten</button>
-          <button class="btn secondary">Referenzen ansehen</button>
+    <main>
+      <section class="hero">
+        <div class="bg-layer noise"></div>
+        <div class="bg-layer grid"></div>
+        <div class="bg-layer glow">
+          <div class="orb a" data-depth="0.35"></div>
+          <div class="orb b" data-depth="0.25"></div>
+          <div class="orb c" data-depth="0.45"></div>
         </div>
-      </div>
-    </section>
+
+        <div class="hero-content">
+          <span class="badge">Webdesign Agentur aus dem Wendland</span>
+          <h1>
+            Wir bauen digitale Marken mit
+            <span class="accent">wow‑Effekt</span>.
+          </h1>
+          <p>
+            <strong>Wendland Web Design</strong> gestaltet performante Websites, die modern aussehen,
+            blitzschnell laden und Kundenanfragen messbar steigern.
+          </p>
+          <div class="actions">
+            <button class="btn primary">Projekt starten</button>
+            <button class="btn secondary">Referenzen ansehen</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" aria-labelledby="services-title">
+        <span class="badge">Services</span>
+        <h2 id="services-title" class="section-title">Was wir für dich umsetzen</h2>
+        <p class="section-intro">
+          Von der Strategie bis zur fertigen Website – wir liefern alles aus einer Hand und mit
+          Fokus auf messbare Ergebnisse.
+        </p>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Webdesign & UX</h3>
+            <p>Moderne Layouts mit klaren Nutzerpfaden, die Vertrauen schaffen und konvertieren.</p>
+          </article>
+          <article class="service-card">
+            <h3>Entwicklung</h3>
+            <p>Performante, responsive Websites mit sauberem Code und optimaler Ladegeschwindigkeit.</p>
+          </article>
+          <article class="service-card">
+            <h3>SEO-Basis</h3>
+            <p>Technische und inhaltliche Grundlagen, damit deine Website gefunden wird.</p>
+          </article>
+          <article class="service-card">
+            <h3>Wartung & Support</h3>
+            <p>Regelmäßige Updates, Sicherheit und zuverlässige Betreuung nach dem Launch.</p>
+          </article>
+        </div>
+      </section>
+    </main>
 
     <footer class="site-footer">
       <span>© 2026 Wendland Web Design</span>
