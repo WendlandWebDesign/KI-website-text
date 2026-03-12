@@ -252,6 +252,49 @@
         font-size: 0.95rem;
       }
 
+      .services {
+        width: min(1100px, 92vw);
+        margin: 0 auto 4rem;
+        padding: 2.5rem;
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: linear-gradient(135deg, rgba(16, 23, 42, 0.82), rgba(10, 17, 36, 0.86));
+        box-shadow: 0 20px 45px rgba(2, 4, 14, 0.45);
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+      }
+
+      .section-copy {
+        margin: 0.9rem 0 0;
+      }
+
+      .services-grid {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .service-card {
+        padding: 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .service-card h3 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+
+      .service-card p {
+        margin-top: 0.6rem;
+        font-size: 0.98rem;
+      }
+
       .footer-links {
         display: flex;
         gap: 1rem;
@@ -269,6 +312,12 @@
       @media (max-width: 768px) {
         .hero-content {
           padding: 2rem 1.3rem;
+          border-radius: 22px;
+        }
+
+        .services {
+          margin-bottom: 2.2rem;
+          padding: 1.7rem 1.2rem;
           border-radius: 22px;
         }
 
@@ -293,7 +342,7 @@
     <header class="site-header">
       <div class="brand">WENDLAND <span>WEB DESIGN</span></div>
       <nav class="main-nav" aria-label="Hauptnavigation">
-        <a href="#">Leistungen</a>
+        <a href="#services">Leistungen</a>
         <a href="#">Projekte</a>
         <a href="#">Über uns</a>
         <a href="#">Kontakt</a>
@@ -323,6 +372,30 @@
           <button class="btn primary">Projekt starten</button>
           <button class="btn secondary">Referenzen ansehen</button>
         </div>
+      </div>
+    </section>
+
+    <section id="services" class="services" aria-labelledby="services-title">
+      <span class="badge">Unsere Leistungen</span>
+      <h2 id="services-title" class="section-title">Dedicated Services für nachhaltiges Wachstum.</h2>
+      <p class="section-copy">
+        Von der strategischen Planung bis zur technischen Umsetzung entwickeln wir Lösungen,
+        die Marken sichtbar machen und Anfragen steigern.
+      </p>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <h3>Webdesign &amp; UX</h3>
+          <p>Moderne Nutzerführung, klare Struktur und visuelle Konzepte mit Wiedererkennungswert.</p>
+        </article>
+        <article class="service-card">
+          <h3>Webentwicklung</h3>
+          <p>Schnelle, saubere Umsetzung mit Fokus auf Performance, Wartbarkeit und SEO-Basics.</p>
+        </article>
+        <article class="service-card">
+          <h3>Content &amp; Conversion</h3>
+          <p>Texte und CTA-Strukturen, die Vertrauen schaffen und Besucher gezielt zur Anfrage führen.</p>
+        </article>
       </div>
     </section>
 
